@@ -1,0 +1,6 @@
+{
+  "name": "fast",
+  "run": "deno run -A --unstable ./frameworks/fast/server.ts",
+  "lang": "Deno",
+  "link": "https://github.com/danteissaias/fast"
+}

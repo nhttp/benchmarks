@@ -1,0 +1,6 @@
+{
+  "name": "nhttp",
+  "run": "deno run -A --unstable ./frameworks/nhttp/server.ts",
+  "lang": "Deno",
+  "link": "https://github.com/nhttp/nhttp"
+}

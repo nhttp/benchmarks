@@ -1,0 +1,6 @@
+{
+  "name": "fastify",
+  "run": "node ./frameworks/fastify/server.js",
+  "lang": "Node",
+  "link": "https://github.com/fastify/fastify"
+}

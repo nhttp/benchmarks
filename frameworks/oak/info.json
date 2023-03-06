@@ -1,0 +1,6 @@
+{
+  "name": "oak",
+  "run": "deno run -A --unstable ./frameworks/oak/server.ts",
+  "lang": "Deno",
+  "link": "https://github.com/oakserver/oak"
+}

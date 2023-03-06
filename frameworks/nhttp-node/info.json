@@ -1,0 +1,6 @@
+{
+  "name": "nhttp-node",
+  "run": "node ./frameworks/nhttp-node/server.js",
+  "lang": "Node",
+  "link": "https://github.com/nhttp/nhttp"
+}

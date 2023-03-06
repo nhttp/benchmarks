@@ -1,0 +1,6 @@
+{
+  "name": "hono",
+  "run": "deno run -A --unstable ./frameworks/hono/server.ts",
+  "lang": "Deno",
+  "link": "https://github.com/honojs/hono"
+}

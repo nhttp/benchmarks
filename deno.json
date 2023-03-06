@@ -1,0 +1,22 @@
+{
+  "tasks": {
+    "bench": "deno run -A --unstable ./bench.ts",
+    "readme": "deno run -A ./helpers/readme.ts"
+  },
+  "fmt": {
+    "files": {
+      "exclude": [
+        "results/",
+        "node_modules/"
+      ]
+    }
+  },
+  "lint": {
+    "files": {
+      "exclude": [
+        "results/",
+        "node_modules/"
+      ]
+    }
+  }
+}

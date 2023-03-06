@@ -1,0 +1,64 @@
+name: bench
+'on':
+  schedule:
+    - cron: 0 0 * * *
+  push:
+    branches: master
+jobs:
+  benchmark:
+    name: 'benchmark'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Install Deno
+        uses: denoland/setup-deno@v1
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.20.0'
+      - name: Install Node
+        uses: actions/setup-node@v3
+      - name: Install Bun
+        uses: antongolub/action-setup-bun@v1
+      - name: Install Bombardier
+        run: go install github.com/codesenberg/bombardier@latest
+      - name: Setup Package
+        run: bun install
+      - name: Run Benchmark
+        run: deno task bench
+      - name: Save benchmark results
+        id: benchmark-results
+        uses: actions/cache@v3
+        with:
+          path: results/result.json
+          key: 'benchmark-results-${{ github.run_id }}'
+  finish:
+    name: Finish
+    runs-on: ubuntu-latest
+    needs:
+      - benchmark
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Load benchmark results
+        id: benchmark-results
+        uses: actions/cache@v3
+        with:
+          path: results/result.json
+          key: 'benchmark-results-${{ github.run_id }}'
+      - name: Install Deno
+        uses: denoland/setup-deno@v1
+      - name: Generate README.md
+        run: deno task readme
+      - name: Push changes
+        uses: actions-js/push@v1
+        with:
+          github_token: '${{ secrets.GITHUB_TOKEN }}'
+          branch: master

@@ -1,0 +1,6 @@
+{
+  "name": "hono-bun",
+  "run": "bun run ./frameworks/hono/server.ts",
+  "lang": "Bun",
+  "link": "https://github.com/honojs/hono"
+}

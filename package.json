@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "elysia": "latest",
+    "express": "latest",
+    "fastify": "latest",
+    "hono": "latest",
+    "nhttp-land": "latest"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "fastro",
+  "run": "deno run -A --unstable ./frameworks/fastro/server.ts",
+  "lang": "Deno",
+  "link": "https://github.com/fastrodev/fastro"
+}

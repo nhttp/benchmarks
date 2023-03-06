@@ -1,0 +1,6 @@
+{
+  "name": "elysia",
+  "run": "bun run ./frameworks/elysia/server.ts",
+  "lang": "Bun",
+  "link": "https://github.com/elysiajs/elysia"
+}
