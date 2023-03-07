@@ -1,0 +1,6 @@
+{
+  "name": "baojs",
+  "run": "bun run ./frameworks/baojs/server.ts",
+  "lang": "Bun",
+  "link": "https://github.com/mattreid1/baojs"
+}

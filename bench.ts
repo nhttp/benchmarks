@@ -48,7 +48,7 @@ async function bench(info: TInfo) {
     result["Name"] = `[${info.name}](${info.link})`;
     result["Lang/Runtime"] = info.lang;
     result["AVG"] = 0;
-    result["Flag"] = name; 
+    result["Flag"] = name;
     console.log("~ Start bench", name);
     const server = new Deno.Command(info.command, { args: info.args });
     const child = server.spawn();
@@ -97,7 +97,11 @@ if (fw) {
     args.shift();
     arr[i].args = args;
   }
-  const fwks = arr.sort((a, b) => (b["lang"] < a["lang"] ? -1 : 1));
+  //shuffle
+  const fwks = arr.map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+    .sort((a, b) => (b["lang"] < a["lang"] ? -1 : 1));
   // deno-lint-ignore no-explicit-any
   const obj = {} as Record<string, any>;
   let i = 0;
