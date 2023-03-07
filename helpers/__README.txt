@@ -1,9 +1,7 @@
-## Simple deno benchmark.
+## Runtime JS/TS benchmarks.
 This benchmark uses [bombardier](https://github.com/codesenberg/bombardier).
 
-> Inspired by [bench](https://github.com/denosaurs/bench).
-
-> This benchmark focus on framework features.
+> Focus on framework features.
 
 Example code for benchmark.
 ```ts
@@ -23,11 +21,7 @@ framework.get("/api/user", (req, res) => {
   res.json({ user: "john" });
 });
 ```
-## Deno
-
-## Bun
-
-## Node
+## Output
 
 ## Usage
 

@@ -1,6 +1,6 @@
 {
-  "name": "nhttp-bun",
-  "run": "bun run ./frameworks/nhttp/server.ts",
+  "name": "nhttp",
+  "run": "bun run ./frameworks/nhttp-bun/server.ts",
   "lang": "Bun",
   "link": "https://github.com/nhttp/nhttp"
 }

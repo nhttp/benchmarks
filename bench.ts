@@ -10,6 +10,7 @@ export type TResult = {
   "GET /api/user": number;
   "Lang/Runtime": string;
   "Date": string;
+  "Flag": string;
 };
 
 type TInfo = {
@@ -40,18 +41,20 @@ async function getReqSec(args: string[]) {
   return parseInt(output.match(reg)?.[1] ?? "0");
 }
 async function bench(info: TInfo) {
+  const name = info.name + " " + info.lang;
   try {
     const result = <TResult> {};
     result["OriginalName"] = info.name;
     result["Name"] = `[${info.name}](${info.link})`;
     result["Lang/Runtime"] = info.lang;
     result["AVG"] = 0;
-    console.log("~ Start bench", info.name);
+    result["Flag"] = name; 
+    console.log("~ Start bench", name);
     const server = new Deno.Command(info.command, { args: info.args });
     const child = server.spawn();
-    console.log(`~ Warming up ${info.name}. (10s)`);
+    console.log(`~ Warming up ${name}. (10s)`);
     await sleep(10);
-    console.log(`~ Run bench ${info.name}. (wait...)`);
+    console.log(`~ Run bench ${name}. (wait...)`);
     let i = 0;
     while (i < c_len) {
       const int = await getReqSec(cmds[i]);
@@ -61,15 +64,15 @@ async function bench(info: TInfo) {
       result["AVG"] += int;
       i++;
     }
-    console.log("~ Success bench", info.name);
+    console.log("~ Success bench", name);
     await sleep(2);
     child.kill("SIGKILL");
     await sleep(3);
     result["AVG"] = parseInt((result["AVG"] / 3).toFixed(0));
-    console.log("~ Result for", info.name, "=>", result);
+    console.log("~ Result for", name, "=>", result);
     return result;
   } catch (error) {
-    console.log(info.name, error);
+    console.log(name, error);
     return null;
   }
 }
@@ -98,15 +101,16 @@ if (fw) {
   const fwks = arr.map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
-  const results = [] as TResult[];
+  // deno-lint-ignore no-explicit-any
+  const obj = {} as Record<string, any>;
   let i = 0;
   const len = fwks.length;
   while (i < len) {
     const result = await bench(fwks[i]);
-    if (result) results.push(result);
+    if (result) obj[result.Flag] = result;
     i++;
   }
-  const end = results.map((el) => {
+  const end = Object.values<TResult>(obj).map((el) => {
     el.Date = `${now.toDateString() + ", " + now.toLocaleTimeString()}`;
     return el;
   }).sort((a, b) => (b["AVG"] < a["AVG"] ? -1 : 1));
