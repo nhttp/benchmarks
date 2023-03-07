@@ -47,10 +47,10 @@ Created At : ${result[0]?.Date ?? "null"}
 
 Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=github-actions%5Bbot%5D)
 
+${tables.join("\n")}
+
 ### Results
 ${all_table}
-
-${tables.join("\n")}
 `,
   ),
 );
