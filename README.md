@@ -23,7 +23,7 @@ framework.get("/api/user", (req, res) => {
 ```
 
 ## Output
-Created At : Tue Mar 07 2023, 8:17:18 AM
+Created At : Wed Mar 08 2023, 12:48:12 AM
 
 Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=github-actions%5Bbot%5D)
 
@@ -31,50 +31,50 @@ Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=g
 ### Deno
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[fast](https://github.com/danteissaias/fast)|40211|44182|36994|39458|
-|[nhttp](https://github.com/nhttp/nhttp)|39930|41096|39097|39598|
-|[hono](https://github.com/honojs/hono)|34951|39023|38197|27632|
-|[fastro](https://github.com/fastrodev/fastro)|30703|37830|26487|27792|
-|[oak](https://github.com/oakserver/oak)|17246|16889|18139|16711|
+|[nhttp](https://github.com/nhttp/nhttp)|36482|39418|35773|34255|
+|[fast](https://github.com/danteissaias/fast)|34803|38476|31621|34312|
+|[hono](https://github.com/honojs/hono)|31322|34241|34129|25595|
+|[fastro](https://github.com/fastrodev/fastro)|28628|31702|28965|25218|
+|[oak](https://github.com/oakserver/oak)|14220|16346|11001|15314|
   
 
 
 ### Bun
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|55680|60049|53855|53137|
-|[elysia](https://github.com/elysiajs/elysia)|53679|61755|51453|47830|
-|[hono](https://github.com/honojs/hono)|51983|62483|50539|42926|
-|[baojs](https://github.com/mattreid1/baojs)|46323|46843|43591|48535|
+|[nhttp](https://github.com/nhttp/nhttp)|48870|55992|46586|44033|
+|[hono](https://github.com/honojs/hono)|47645|53449|46994|42492|
+|[elysia](https://github.com/elysiajs/elysia)|45739|54985|40845|41386|
+|[baojs](https://github.com/mattreid1/baojs)|38504|43420|41266|30825|
   
 
 
 ### Node
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|29426|30098|30729|27451|
-|[fastify](https://github.com/fastify/fastify)|28878|32541|23220|30872|
-|[koa](https://github.com/koajs/koa)|18179|17811|17635|19090|
-|[express](https://github.com/expressjs/express)|6460|6472|6270|6639|
+|[fastify](https://github.com/fastify/fastify)|28046|29085|27564|27490|
+|[nhttp](https://github.com/nhttp/nhttp)|26030|27974|26040|24075|
+|[koa](https://github.com/koajs/koa)|15320|16591|14878|14490|
+|[express](https://github.com/expressjs/express)|5515|5539|5310|5695|
   
 
 
 ### Results
 |Name|Lang/Runtime|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|Bun|55680|60049|53855|53137|
-|[elysia](https://github.com/elysiajs/elysia)|Bun|53679|61755|51453|47830|
-|[hono](https://github.com/honojs/hono)|Bun|51983|62483|50539|42926|
-|[baojs](https://github.com/mattreid1/baojs)|Bun|46323|46843|43591|48535|
-|[fast](https://github.com/danteissaias/fast)|Deno|40211|44182|36994|39458|
-|[nhttp](https://github.com/nhttp/nhttp)|Deno|39930|41096|39097|39598|
-|[hono](https://github.com/honojs/hono)|Deno|34951|39023|38197|27632|
-|[fastro](https://github.com/fastrodev/fastro)|Deno|30703|37830|26487|27792|
-|[nhttp](https://github.com/nhttp/nhttp)|Node|29426|30098|30729|27451|
-|[fastify](https://github.com/fastify/fastify)|Node|28878|32541|23220|30872|
-|[koa](https://github.com/koajs/koa)|Node|18179|17811|17635|19090|
-|[oak](https://github.com/oakserver/oak)|Deno|17246|16889|18139|16711|
-|[express](https://github.com/expressjs/express)|Node|6460|6472|6270|6639|
+|[nhttp](https://github.com/nhttp/nhttp)|Bun|48870|55992|46586|44033|
+|[hono](https://github.com/honojs/hono)|Bun|47645|53449|46994|42492|
+|[elysia](https://github.com/elysiajs/elysia)|Bun|45739|54985|40845|41386|
+|[baojs](https://github.com/mattreid1/baojs)|Bun|38504|43420|41266|30825|
+|[nhttp](https://github.com/nhttp/nhttp)|Deno|36482|39418|35773|34255|
+|[fast](https://github.com/danteissaias/fast)|Deno|34803|38476|31621|34312|
+|[hono](https://github.com/honojs/hono)|Deno|31322|34241|34129|25595|
+|[fastro](https://github.com/fastrodev/fastro)|Deno|28628|31702|28965|25218|
+|[fastify](https://github.com/fastify/fastify)|Node|28046|29085|27564|27490|
+|[nhttp](https://github.com/nhttp/nhttp)|Node|26030|27974|26040|24075|
+|[koa](https://github.com/koajs/koa)|Node|15320|16591|14878|14490|
+|[oak](https://github.com/oakserver/oak)|Deno|14220|16346|11001|15314|
+|[express](https://github.com/expressjs/express)|Node|5515|5539|5310|5695|
 
 
 
