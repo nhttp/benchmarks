@@ -100,8 +100,7 @@ if (fw) {
   //shuffle
   const fwks = arr.map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value)
-    .sort((a, b) => (b["lang"] < a["lang"] ? -1 : 1));
+    .map(({ value }) => value);
   // deno-lint-ignore no-explicit-any
   const obj = {} as Record<string, any>;
   let i = 0;
