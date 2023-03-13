@@ -1,4 +1,4 @@
-## Runtime JS/TS benchmarks.
+## Runtime JS/TS benchmarks
 This benchmark uses [bombardier](https://github.com/codesenberg/bombardier).
 
 > Focus on framework features.
