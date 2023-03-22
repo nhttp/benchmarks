@@ -2,7 +2,9 @@ import { nhttp } from "nhttp-land";
 
 nhttp()
   .get("/", () => "home")
-  .get("/blog/:id", (rev) => `${rev.params.id} ${rev.query.title}`)
+  .get("/blog/:id", async (rev) => {
+    return await Promise.resolve(`${rev.params.id} ${rev.query.title}`);
+  })
   .get("/api/user", (rev) => {
     rev.response.setHeader("x-powered-by", "bench");
     return { user: "john" };

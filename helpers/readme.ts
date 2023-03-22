@@ -31,8 +31,8 @@ ${table}
 }
 
 buildReadmeRuntime(deno, "Deno");
-buildReadmeRuntime(bun, "Bun");
 buildReadmeRuntime(node, "Node");
+buildReadmeRuntime(bun, "Bun");
 
 const all_table = mark(result, headers_all);
 

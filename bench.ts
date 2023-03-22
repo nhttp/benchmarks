@@ -26,7 +26,7 @@ const sleep = (sec: number) =>
   new Promise((res) => setTimeout(res, sec * 1000));
 const lookup = "./frameworks/";
 const fw = Deno.args[0];
-const defs = ["--fasthttp", "-c", "200", "-d", "10s"];
+const defs = ["--fasthttp", "-c", "100", "-d", "10s"];
 const cmds: string[][] = [
   [...defs, "http://localhost:8000"],
   [...defs, "http://localhost:8000/blog/99?title=bench"],
@@ -97,11 +97,7 @@ if (fw) {
     args.shift();
     arr[i].args = args;
   }
-  //shuffle
-  const fwks = arr.map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value)
-    .sort((a, b) => (b["lang"] < a["lang"] ? -1 : 1));
+  const fwks = arr.sort((a, b) => (b["lang"] > a["lang"] ? -1 : 1));
   // deno-lint-ignore no-explicit-any
   const obj = {} as Record<string, any>;
   let i = 0;

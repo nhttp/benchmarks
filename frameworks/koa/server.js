@@ -6,8 +6,8 @@ router
   .get("/", (ctx) => {
     ctx.body = "home";
   })
-  .get("/blog/:id", (ctx) => {
-    ctx.body = `${ctx.params.id} ${ctx.query.title}`;
+  .get("/blog/:id", async (ctx) => {
+    ctx.body = await Promise.resolve(`${ctx.params.id} ${ctx.query.title}`);
   })
   .get("/api/user", (ctx) => {
     ctx.set("x-powered-by", "bench");

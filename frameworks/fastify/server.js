@@ -4,8 +4,8 @@ fastify()
   .get("/", (_, reply) => {
     reply.send("home");
   })
-  .get("/blog/:id", (req, reply) => {
-    reply.send(`${req.params.id} ${req.query.title}`)
+  .get("/blog/:id", async (req, reply) => {
+    reply.send(await Promise.resolve(`${req.params.id} ${req.query.title}`));
   })
   .get("/api/user", (_, reply) => {
     reply.header("x-powered-by", "bench");

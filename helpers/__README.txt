@@ -10,9 +10,10 @@ framework.get("/", (req, res) => {
   res.send("home");
 });
 
-// GET /blog/99?title=bench
-framework.get("/blog/:id", (req, res) => {
-  res.send(`${req.params.id} ${req.query.title}`);
+// GET /blog/99?title=bench (params, queryParams, perform with promise)
+framework.get("/blog/:id", async (req, res) => {
+  const data = await Promise.resolve(`${req.params.id} ${req.query.title}`);
+  res.send(data);
 });
 
 // GET /api/user (set header & send json)

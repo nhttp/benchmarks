@@ -4,7 +4,11 @@ const app = new Hono()
   .get("/", (c) => c.text("home"))
   .get(
     "/blog/:id",
-    (c) => c.text(`${c.req.param("id")} ${c.req.query("title")}`),
+    async (c) => {
+      return c.text(
+        await Promise.resolve(`${c.req.param("id")} ${c.req.query("title")}`),
+      );
+    },
   )
   .get("/api/user", (c) => {
     c.header("x-powered-by", "bench");
