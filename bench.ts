@@ -26,7 +26,7 @@ const sleep = (sec: number) =>
   new Promise((res) => setTimeout(res, sec * 1000));
 const lookup = "./frameworks/";
 const fw = Deno.args[0];
-const defs = ["--fasthttp", "-c", "100", "-d", "10s"];
+const defs = ["--fasthttp", "-c", "125", "-d", "10s"];
 const cmds: string[][] = [
   [...defs, "http://localhost:8000"],
   [...defs, "http://localhost:8000/blog/99?title=bench"],
