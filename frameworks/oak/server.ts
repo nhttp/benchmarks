@@ -10,10 +10,10 @@ router
   .get("/", (ctx) => {
     ctx.response.body = "home";
   })
-  .get("/blog/:id", async (ctx) => {
-    ctx.response.body = await Promise.resolve(`${ctx.params.id} ${
+  .get("/blog/:id", (ctx) => {
+    ctx.response.body = `${ctx.params.id} ${
       ctx.request.url.searchParams.get("title")
-    }`);
+    }`;
   })
   .get("/api/user", (ctx) => {
     ctx.response.headers.set("x-powered-by", "bench");

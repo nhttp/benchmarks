@@ -7,14 +7,14 @@ const headers_all = [
   "AVG",
   "GET /",
   "GET /blog/:id",
-  "GET /api/user"
+  "GET /api/user",
 ] as const;
 const headers = [
   "Name",
   "AVG",
   "GET /",
   "GET /blog/:id",
-  "GET /api/user"
+  "GET /api/user",
 ] as const;
 const named = "Lang/Runtime";
 const result = JSON.parse(await Deno.readTextFile("results/result.json"));

@@ -26,19 +26,18 @@ const sleep = (sec: number) =>
   new Promise((res) => setTimeout(res, sec * 1000));
 const lookup = "./frameworks/";
 const fw = Deno.args[0];
-const defs = ["--fasthttp", "-c", "125", "-d", "10s"];
+const defs = ["-j", "-z", "10s", "--no-tui"];
 const cmds: string[][] = [
-  [...defs, "http://localhost:8000"],
+  [...defs, "http://localhost:8000/"],
   [...defs, "http://localhost:8000/blog/99?title=bench"],
   [...defs, "http://localhost:8000/api/user"],
 ];
 const c_len = cmds.length;
 const decoder = new TextDecoder();
-const reg = /Reqs\/sec\s+(\d+[.|,]\d+)/m;
-async function getReqSec(args: string[]) {
-  const cmd = new Deno.Command("bombardier", { args });
+async function oha(args: string[]) {
+  const cmd = new Deno.Command("oha", { args });
   const output = decoder.decode((await cmd.output()).stdout);
-  return parseInt(output.match(reg)?.[1] ?? "0");
+  return JSON.parse(output);
 }
 async function bench(info: TInfo) {
   const name = info.name + " " + info.lang;
@@ -57,7 +56,8 @@ async function bench(info: TInfo) {
     console.log(`~ Run bench ${name}. (wait...)`);
     let i = 0;
     while (i < c_len) {
-      const int = await getReqSec(cmds[i]);
+      const ret = await oha(cmds[i]);
+      const int = Math.round(ret.summary.requestsPerSec);
       if (i === 0) result["GET /"] = int;
       else if (i === 1) result["GET /blog/:id"] = int;
       else if (i === 2) result["GET /api/user"] = int;
@@ -68,7 +68,7 @@ async function bench(info: TInfo) {
     await sleep(2);
     child.kill("SIGKILL");
     await sleep(3);
-    result["AVG"] = parseInt((result["AVG"] / 3).toFixed(0));
+    result["AVG"] = Math.round(result["AVG"] / 3);
     console.log("~ Result for", name, "=>", result);
     return result;
   } catch (error) {

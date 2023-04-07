@@ -1,5 +1,4 @@
 ## Runtime JS/TS benchmarks.
-This benchmark uses [bombardier](https://github.com/codesenberg/bombardier).
 
 > Focus on framework features.
 
@@ -10,9 +9,9 @@ framework.get("/", (req, res) => {
   res.send("home");
 });
 
-// GET /blog/99?title=bench (params, queryParams, perform with promise)
-framework.get("/blog/:id", async (req, res) => {
-  const data = await Promise.resolve(`${req.params.id} ${req.query.title}`);
+// GET /blog/99?title=bench (params and queryParams)
+framework.get("/blog/:id", (req, res) => {
+  const data = `${req.params.id} ${req.query.title}`;
   res.send(data);
 });
 

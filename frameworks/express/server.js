@@ -4,8 +4,8 @@ express()
   .get("/", (_, res) => {
     res.send("home");
   })
-  .get("/blog/:id", async (req, res) => {
-    res.send(await Promise.resolve(`${req.params.id} ${req.query.title}`));
+  .get("/blog/:id", (req, res) => {
+    res.send(`${req.params.id} ${req.query.title}`);
   })
   .get("/api/user", (_, res) => {
     res.setHeader("x-powered-by", "bench");
