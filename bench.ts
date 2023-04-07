@@ -57,7 +57,7 @@ async function bench(info: TInfo) {
     let i = 0;
     while (i < c_len) {
       const ret = await oha(cmds[i]);
-      const int = Math.round(ret.summary.requestsPerSec);
+      const int = Math.round(ret.rps.mean ?? 0);
       if (i === 0) result["GET /"] = int;
       else if (i === 1) result["GET /blog/:id"] = int;
       else if (i === 2) result["GET /api/user"] = int;
