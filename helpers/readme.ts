@@ -1,14 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 import mark from "https://esm.sh/json-to-markdown-table@1.0.0";
 
-const headers_all = [
-  "Name",
-  "Lang/Runtime",
-  "AVG",
-  "GET /",
-  "GET /blog/:id",
-  "GET /api/user",
-] as const;
 const headers = [
   "Name",
   "AVG",
@@ -34,8 +26,6 @@ buildReadmeRuntime(deno, "Deno");
 buildReadmeRuntime(node, "Node");
 buildReadmeRuntime(bun, "Bun");
 
-const all_table = mark(result, headers_all);
-
 const readme = await Deno.readTextFile("./helpers/__README.txt");
 await Deno.writeTextFile(
   "README.md",
@@ -48,9 +38,6 @@ Created At : ${result[0]?.Date ?? "null"}
 Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=github-actions%5Bbot%5D)
 
 ${tables.join("\n")}
-
-### Results
-${all_table}
 `,
   ),
 );
