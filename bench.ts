@@ -1,5 +1,5 @@
-import { recursiveReaddir } from "./deps.ts";
 import now from "./helpers/date.ts";
+import getInfo from "./helpers/info.ts";
 
 export type TResult = {
   "OriginalName": string;
@@ -87,9 +87,7 @@ if (fw) {
   const raw = await Deno.readTextFile(lookup + fw + "/info.json");
   await bench(mutateInfo(JSON.parse(raw)));
 } else {
-  const arr: TInfo[] = (await recursiveReaddir("frameworks"))
-    .filter((el) => el.endsWith("info.json"))
-    .map((el) => JSON.parse(Deno.readTextFileSync(el)));
+  const arr: TInfo[] = await getInfo();
   for (let i = 0; i < arr.length; i++) {
     const info = arr[i];
     const args = info.run.split(" ");
@@ -97,13 +95,12 @@ if (fw) {
     args.shift();
     arr[i].args = args;
   }
-  const fwks = arr.sort((a, b) => (b["lang"] > a["lang"] ? -1 : 1));
   // deno-lint-ignore no-explicit-any
   const obj = {} as Record<string, any>;
   let i = 0;
-  const len = fwks.length;
+  const len = arr.length;
   while (i < len) {
-    const result = await bench(fwks[i]);
+    const result = await bench(arr[i]);
     if (result) obj[result.Flag] = result;
     i++;
   }
