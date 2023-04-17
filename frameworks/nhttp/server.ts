@@ -1,6 +1,6 @@
 import { nhttp } from "https://deno.land/x/nhttp/mod.ts";
 
-nhttp({ flash: true })
+nhttp()
   .get("/", () => "home")
   .get("/blog/:id", (rev) => `${rev.params.id} ${rev.query.title}`)
   .get("/api/user", (rev) => {
