@@ -1,7 +1,5 @@
 import {
   Application,
-  FlashServer,
-  hasFlash,
   Router,
 } from "https://deno.land/x/oak/mod.ts";
 
@@ -20,8 +18,7 @@ router
     ctx.response.body = { user: "john" };
   });
 
-const appOptions = hasFlash() ? { serverConstructor: FlashServer } : undefined;
-const app = new Application(appOptions);
+const app = new Application();
 app.use(router.routes());
 app.use(router.allowedMethods());
 
