@@ -1,4 +1,4 @@
-import { nhttp } from "https://raw.githubusercontent.com/nhttp/nhttp/master/mod.ts";
+import { nhttp } from "https://deno.land/x/nhttp/mod.ts";
 
 nhttp({ flash: true })
   .get("/", () => "home")
