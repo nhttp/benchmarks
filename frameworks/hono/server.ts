@@ -10,4 +10,4 @@ const app = new Hono()
     return c.json({ user: "john" });
   });
 
-await Deno.serve(app.fetch, { port: 8000 });
+await Deno.serve({ port: 8000 }, (req) => app.fetch(req));
