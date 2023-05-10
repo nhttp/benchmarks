@@ -11,4 +11,4 @@ const app = fast()
     return Response.json({ user: "john" }, { headers });
   });
 
-await Deno.serve({ port: 8000 }, app.handle);
+await Deno.serve({ port: 8000 }, (req) => app.handle(req));
