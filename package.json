@@ -8,6 +8,6 @@
     "fastify": "latest",
     "hono": "latest",
     "koa": "latest",
-    "nhttp-land": "latest"
+    "nhttp-land": "1.2.15"
   }
 }
