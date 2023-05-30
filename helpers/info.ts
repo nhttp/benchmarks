@@ -20,5 +20,5 @@ export default async () => {
   const infos = dirs.filter((str) => str.includes("info.json")).map((str) =>
     JSON.parse(Deno.readTextFileSync(str))
   );
-  return infos;
+  return infos.sort((a, b) => (b["lang"] > a["lang"] ? -1 : 1));
 };
