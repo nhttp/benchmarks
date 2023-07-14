@@ -23,7 +23,7 @@ framework.get("/api/user", (req, res) => {
 ```
 
 ## Output
-Created At : Thu Jul 13 2023, 12:57:32 AM
+Created At : Fri Jul 14 2023, 12:52:44 AM
 
 Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=github-actions%5Bbot%5D)
 
@@ -31,29 +31,29 @@ Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=g
 ### Deno
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|51083|55497|49481|48272|
-|[hono](https://github.com/honojs/hono)|45062|53810|37104|44273|
-|[oak](https://github.com/oakserver/oak)|14987|15858|14783|14319|
+|[nhttp](https://github.com/nhttp/nhttp)|47782|51108|46626|45611|
+|[hono](https://github.com/honojs/hono)|42315|51007|49394|26543|
+|[oak](https://github.com/oakserver/oak)|14541|15095|15001|13526|
   
 
 
 ### Node
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|31988|34971|31359|29633|
-|[fastify](https://github.com/fastify/fastify)|24778|26429|24959|22945|
-|[koa](https://github.com/koajs/koa)|16196|17089|15192|16308|
-|[express](https://github.com/expressjs/express)|5508|5723|5033|5769|
+|[nhttp](https://github.com/nhttp/nhttp)|31004|32994|31141|28878|
+|[fastify](https://github.com/fastify/fastify)|24713|25266|24566|24307|
+|[koa](https://github.com/koajs/koa)|15894|16437|15066|16179|
+|[express](https://github.com/expressjs/express)|5450|5711|4856|5783|
   
 
 
 ### Bun
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|59224|57065|61827|58780|
-|[hono](https://github.com/honojs/hono)|57573|56065|57768|58885|
-|[elysia](https://github.com/elysiajs/elysia)|57192|55639|57027|58910|
-|[baojs](https://github.com/mattreid1/baojs)|45497|50763|42700|43027|
+|[hono](https://github.com/honojs/hono)|54481|53933|54948|54563|
+|[elysia](https://github.com/elysiajs/elysia)|54230|51256|54399|57035|
+|[nhttp](https://github.com/nhttp/nhttp)|53515|53924|54456|52165|
+|[baojs](https://github.com/mattreid1/baojs)|41169|47374|31228|44904|
   
 
 
