@@ -23,7 +23,7 @@ framework.get("/api/user", (req, res) => {
 ```
 
 ## Output
-Created At : Fri Sep 15 2023, 12:35:44 AM
+Created At : Sat Sep 16 2023, 12:34:33 AM
 
 Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=github-actions%5Bbot%5D)
 
@@ -31,31 +31,31 @@ Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=g
 ### Deno
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|67034|70997|66985|63121|
-|[hono](https://github.com/honojs/hono)|64052|69656|64841|57660|
-|[fast](https://github.com/danteissaias/fast)|57211|69790|38250|63592|
-|[fastro](https://github.com/fastrodev/fastro)|28052|71403|6558|6194|
-|[oak](https://github.com/oakserver/oak)|19121|20201|18706|18457|
+|[nhttp](https://github.com/nhttp/nhttp)|64272|68258|63617|60941|
+|[hono](https://github.com/honojs/hono)|61182|66797|62067|54683|
+|[fast](https://github.com/danteissaias/fast)|56406|67500|50125|51593|
+|[fastro](https://github.com/fastrodev/fastro)|25893|64937|6215|6528|
+|[oak](https://github.com/oakserver/oak)|18517|19520|18489|17542|
   
 
 
 ### Node
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|44429|48987|45065|39234|
-|[fastify](https://github.com/fastify/fastify)|34777|35205|35177|33948|
-|[koa](https://github.com/koajs/koa)|21927|22968|20803|22009|
-|[express](https://github.com/expressjs/express)|7571|7826|7056|7832|
+|[nhttp](https://github.com/nhttp/nhttp)|44747|47987|44103|42150|
+|[fastify](https://github.com/fastify/fastify)|34596|35350|34608|33830|
+|[koa](https://github.com/koajs/koa)|21466|22516|20208|21673|
+|[express](https://github.com/expressjs/express)|7331|7566|6732|7694|
   
 
 
 ### Bun
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|65375|62844|66060|67220|
-|[hono](https://github.com/honojs/hono)|61687|60785|57820|66457|
-|[elysia](https://github.com/elysiajs/elysia)|61325|62157|59137|62681|
-|[baojs](https://github.com/mattreid1/baojs)|53169|60943|45145|53419|
+|[nhttp](https://github.com/nhttp/nhttp)|63952|60453|65480|65922|
+|[hono](https://github.com/honojs/hono)|62420|57933|64680|64646|
+|[elysia](https://github.com/elysiajs/elysia)|59599|59591|57320|61885|
+|[baojs](https://github.com/mattreid1/baojs)|49123|56231|40094|51045|
   
 
 
