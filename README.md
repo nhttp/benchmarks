@@ -23,7 +23,7 @@ framework.get("/api/user", (req, res) => {
 ```
 
 ## Output
-Created At : Sun Sep 15 2024, 12:53:07 AM
+Created At : Mon Sep 16 2024, 12:50:54 AM
 
 Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=github-actions%5Bbot%5D)
 
@@ -31,29 +31,29 @@ Created By : [bot_ci](https://github.com/herudi/deno_benchmarks/commits?author=g
 ### Deno
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[hono](https://github.com/honojs/hono)|48209|51613|48786|44228|
-|[nhttp](https://github.com/nhttp/nhttp)|48177|52187|47220|45123|
-|[fast](https://github.com/danteissaias/fast)|47259|50718|44157|46901|
-|[oak](https://github.com/oakserver/oak)|27088|27933|26609|26723|
+|[hono](https://github.com/honojs/hono)|48663|52250|48799|44941|
+|[nhttp](https://github.com/nhttp/nhttp)|48543|52723|47887|45019|
+|[fast](https://github.com/danteissaias/fast)|48188|52521|45464|46580|
+|[oak](https://github.com/oakserver/oak)|26227|27227|25722|25733|
   
 
 
 ### Node
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[nhttp](https://github.com/nhttp/nhttp)|25120|31889|22895|20577|
-|[fastify](https://github.com/fastify/fastify)|16634|17081|16551|16270|
-|[express](https://github.com/expressjs/express)|6302|6466|5941|6498|
+|[nhttp](https://github.com/nhttp/nhttp)|25247|31441|23342|20958|
+|[fastify](https://github.com/fastify/fastify)|16616|16940|16543|16366|
+|[express](https://github.com/expressjs/express)|6381|6603|5965|6576|
   
 
 
 ### Bun
 |Name|AVG|GET /|GET /blog/:id|GET /api/user|
 |----|----|----|----|----|
-|[elysia](https://github.com/elysiajs/elysia)|66121|79379|70587|48397|
-|[hono](https://github.com/honojs/hono)|56283|73231|53401|42217|
-|[nhttp](https://github.com/nhttp/nhttp)|56094|76493|49799|41991|
-|[baojs](https://github.com/mattreid1/baojs)|35289|40707|35536|29624|
+|[elysia](https://github.com/elysiajs/elysia)|74380|84263|79316|59561|
+|[hono](https://github.com/honojs/hono)|59397|74255|55094|48843|
+|[nhttp](https://github.com/nhttp/nhttp)|57508|80122|46588|45814|
+|[baojs](https://github.com/mattreid1/baojs)|38628|44607|38268|33008|
   
 
 
